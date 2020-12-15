@@ -9,7 +9,7 @@ from crypto import *
 from stock import *
 from data import date
 
-token = "1480823735:AAEanwEgggt8VWm3VH8MvVcU-WNuFHSRgac"
+token = "XXXXXXXXXXX"
 date = date()
 
 def main_menu_handler(update: Update, context: callbackcontext):
