@@ -1,6 +1,7 @@
 from telegram.ext import Updater, callbackcontext
 from telegram.chataction import ChatAction
 from data import arz_price
+import re
 
 arz_price = arz_price()
 
@@ -133,3 +134,31 @@ def dollar_canada(update: Updater, context: callbackcontext):
     
     آخرین ساعت به روز رسانی : {arz_price['dollar_canada'][4].text}
     ''')
+
+def dollar_to_rial(update: Updater, context: callbackcontext):
+
+    user_input = update.message.text
+    lst = re.findall('\d', user_input)
+    if lst == None:
+        update.message.reply_text(text="خطایی رخ داده است.")
+        return
+    dollars = int("".join(lst))
+    dollar_cost = arz_price['dollar_usa'][0].text
+    to_rial = round(dollars * int(dollar_cost.replace(',','')), 3)
+    update.message.reply_text(text=f'''مبلغ وارد شده برابر {to_rial:,} ریال می‌باشد.
+    \nآخرین ساعت به روزرسانی  : {arz_price['dollar_usa'][4].text}
+    \nمبلغ نهایی تا ۳ رقم اعشار، نشان داده شده.
+    \nامکان درصد کمی خطا وجود دارد.''')
+
+def rial_to_dollar(update: Updater, context: callbackcontext):
+
+    user_input = update.message.text
+    lst = re.findall('\d', user_input)
+    rialls = int("".join(lst))
+    dollar_cost = arz_price['dollar_usa'][0].text
+    to_dollar = round(rialls / int(dollar_cost.replace(',','')), 3)
+    update.message.reply_text(text=f'''
+    مبلغ وارد شده برابر {to_dollar:,} دلار می‌باشد.
+    \nآخرین ساعت به روزرسانی  : {arz_price['dollar_usa'][4].text}
+    \nمبلغ نهایی تا ۳ رقم اعشار، نشان داده شده.
+    \nامکان درصد کمی خطا وجود دارد.''')
