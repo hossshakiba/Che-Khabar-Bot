@@ -3,6 +3,8 @@ from telegram.chataction import ChatAction
 from data import *
 
 sekke_price = sekke_price()
+gold_price = gold_price()
+
 
 def bahar(update: Updater, context: callbackcontext):
 
@@ -62,4 +64,36 @@ def rob(update: Updater, context: callbackcontext):
     بیشترین قیمت روز :‌ {sekke_price['rob'][3].text} ریال
     
     آخرین ساعت به روز رسانی : {sekke_price['rob'][4].text}
+    ''')
+
+
+def gold_18(update: Updater, context: callbackcontext):
+    
+    chat_id = update.message.chat_id
+    context.bot.send_chat_action(chat_id, ChatAction.TYPING)
+    update.message.reply_text(f'''
+    #طلایـ۱۸ـعیار\n
+    قیمت زنده : {gold_price['tala_18'][0].text} ریال
+    
+    کمترین قیمت روز : {gold_price['tala_18'][2].text} ریال
+    
+    بیشترین قیمت روز :‌ {gold_price['tala_18'][3].text} ریال
+    
+    آخرین ساعت به روز رسانی : {gold_price['tala_18'][4].text}
+    ''')
+
+
+def gold_24(update: Updater, context: callbackcontext):
+
+    chat_id = update.message.chat_id
+    context.bot.send_chat_action(chat_id, ChatAction.TYPING)
+    update.message.reply_text(f'''
+    #طلایـ۲۴ـعیار\n
+    قیمت زنده : {gold_price['tala_24'][0].text} ریال
+    
+    کمترین قیمت روز : {gold_price['tala_24'][2].text} ریال
+    
+    بیشترین قیمت روز :‌ {gold_price['tala_24'][3].text} ریال
+    
+    آخرین ساعت به روز رسانی : {gold_price['tala_24'][4].text}
     ''')

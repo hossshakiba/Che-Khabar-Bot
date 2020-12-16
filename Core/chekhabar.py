@@ -4,7 +4,7 @@ from telegram.chataction import ChatAction
 from telegram.ext import MessageHandler
 from telegram.ext.filters import Filters
 from currency import *
-from coin import *
+from coin_gold import *
 from crypto import *
 from stock import *
 from data import date
@@ -14,7 +14,7 @@ date = date()
 
 def main_menu_handler(update: Update, context: callbackcontext):
     buttons = [
-        ["قیمت سکه","نرخ ارز"],
+        ["قیمت طلا و سکه","نرخ ارز"],
         ["ارزهای دیجیتال", "بورس"],
         ["راهنمای خرید"]
     ]
@@ -30,11 +30,12 @@ def start_handler(update: Update, context: callbackcontext):
 
 def sekke(update: Update, context: callbackcontext):
     buttons = [
+        ["طلای ۲۴ عیار","طلای ۱۸ عیار"],
         ["سکه امامی","سکه بهار آزادی"],
         ["ربع سکه", "نیم سکه"],
         ["بازگشت"]
     ]
-    update.message.reply_text(text=f"قیمت سکه در تاریخ {date}",
+    update.message.reply_text(text=f"قیمت طلا و سکه در تاریخ {date}",
     reply_markup= ReplyKeyboardMarkup(buttons, resize_keyboard=True))
 
 
@@ -71,7 +72,7 @@ def return_handler(update: Updater, context: callbackcontext):
 def main():
     updater = Updater(token, use_context=True)
     updater.dispatcher.add_handler(CommandHandler("start", start_handler))
-    updater.dispatcher.add_handler(MessageHandler(Filters.regex("قیمت سکه"), sekke))
+    updater.dispatcher.add_handler(MessageHandler(Filters.regex("قیمت طلا و سکه"), sekke))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("نرخ ارز"), arz))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("ارزهای دیجیتال"), crypto))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("بازگشت"), return_handler))
@@ -80,6 +81,8 @@ def main():
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("سکه امامی"), emami))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("نیم سکه"), nim))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("ربع سکه"), rob))
+    updater.dispatcher.add_handler(MessageHandler(Filters.regex("طلای ۱۸ عیار"), gold_18))
+    updater.dispatcher.add_handler(MessageHandler(Filters.regex("طلای ۲۴ عیار"), gold_24))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("دلار آمریکا"),dollar_usa))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("یورو"), euro))
     updater.dispatcher.add_handler(MessageHandler(Filters.regex("پوند انگلیس"), pond))

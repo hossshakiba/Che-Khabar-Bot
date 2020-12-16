@@ -13,9 +13,9 @@ def bitcoin(update: Updater, context: callbackcontext):
     #بیتـکوین\n
     قیمت زنده : {crypto[0].text} دلار
     
-    کمترین قیمت روز : {crypto[2].text} ریال
+    کمترین قیمت روز : {crypto[2].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[3].text} ریال
+    بیشترین قیمت روز :‌ {crypto[3].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[4].text}
     ''')
@@ -27,9 +27,9 @@ def etherium(update: Updater, context: callbackcontext):
     #اتریوم\n
     قیمت زنده : {crypto[5].text} دلار
     
-    کمترین قیمت روز : {crypto[8].text} ریال
+    کمترین قیمت روز : {crypto[8].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[9].text} ریال
+    بیشترین قیمت روز :‌ {crypto[9].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[10].text}
     ''')
@@ -41,9 +41,9 @@ def tether(update: Updater, context: callbackcontext):
     #تتر\n
     قیمت زنده : {crypto[12].text} دلار
     
-    کمترین قیمت روز : {crypto[14].text} ریال
+    کمترین قیمت روز : {crypto[14].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[15].text} ریال
+    بیشترین قیمت روز :‌ {crypto[15].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[16].text}
     ''')
@@ -55,9 +55,9 @@ def dash(update: Updater, context: callbackcontext):
     #دش\n
     قیمت زنده : {crypto[18].text} دلار
     
-    کمترین قیمت روز : {crypto[20].text} ریال
+    کمترین قیمت روز : {crypto[20].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[21].text} ریال
+    بیشترین قیمت روز :‌ {crypto[21].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[22].text}
     ''')
@@ -69,9 +69,9 @@ def riple(update: Updater, context: callbackcontext):
     #ریپل\n
     قیمت زنده : {crypto[24].text} دلار
     
-    کمترین قیمت روز : {crypto[26].text} ریال
+    کمترین قیمت روز : {crypto[26].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[27].text} ریال
+    بیشترین قیمت روز :‌ {crypto[27].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[28].text}
     ''')
@@ -83,9 +83,9 @@ def litecoin(update: Updater, context: callbackcontext):
     #ریپل\n
     قیمت زنده : {crypto[30].text} دلار
     
-    کمترین قیمت روز : {crypto[32].text} ریال
+    کمترین قیمت روز : {crypto[32].text} دلار
     
-    بیشترین قیمت روز :‌ {crypto[33].text} ریال
+    بیشترین قیمت روز :‌ {crypto[33].text} دلار
     
     آخرین ساعت به روز رسانی : {crypto[34].text}
     ''')

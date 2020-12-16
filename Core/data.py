@@ -25,6 +25,17 @@ def sekke_price():
 
     return price
 
+
+def gold_price():
+    tala_18 = soup.find("tr", attrs={"data-market-row":"geram18"}).find_all("td")
+    tala_24 = soup.find("tr", attrs={"data-market-row":"geram24"}).find_all("td")
+    price = {
+        'tala_18':tala_18,
+        'tala_24':tala_24
+    }
+
+    return price
+
 def arz_price():
     dollar_usa = soup.find("tr", attrs={"data-market-row":"price_dollar_rl"}).find_all("td")
     euro = soup.find("tr", attrs={"data-market-row":"price_eur"}).find_all("td")
