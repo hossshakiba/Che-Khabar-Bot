@@ -8,8 +8,9 @@ from coin_gold import *
 from crypto import *
 from stock import *
 from data import date
+from decouple import config
 
-token = "XXXXXXXXXXX"
+token = config("TOKEN")
 date = date()
 
 def main_menu_handler(update: Update, context: callbackcontext):

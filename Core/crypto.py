@@ -80,7 +80,7 @@ def litecoin(update: Updater, context: callbackcontext):
     chat_id = update.message.chat_id
     context.bot.send_chat_action(chat_id, ChatAction.TYPING)
     update.message.reply_text(f'''
-    #ریپل\n
+    #لایتـکوین\n
     قیمت زنده : {crypto[30].text} دلار
     
     کمترین قیمت روز : {crypto[32].text} دلار

@@ -68,7 +68,7 @@ def rob(update: Updater, context: callbackcontext):
 
 
 def gold_18(update: Updater, context: callbackcontext):
-    
+
     chat_id = update.message.chat_id
     context.bot.send_chat_action(chat_id, ChatAction.TYPING)
     update.message.reply_text(f'''

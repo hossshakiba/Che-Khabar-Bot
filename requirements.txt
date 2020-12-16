@@ -8,6 +8,7 @@ cryptography==3.3.1
 decorator==4.4.2
 idna==2.10
 pycparser==2.20
+python-decouple==3.3
 python-telegram-bot==13.1
 pytz==2020.4
 requests==2.25.0
