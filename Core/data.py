@@ -1,5 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
+
+sys.dont_write_bytecode = True
 
 url = "https://www.tgju.org/"
 r = requests.get(url)
@@ -45,7 +48,7 @@ def arz_price():
     lir = soup.find("tr", attrs={"data-market-row":"price_try"}).find_all("td")
     youan = soup.find("tr", attrs={"data-market-row":"price_cny"}).find_all("td")
     yen = soup.find("tr", attrs={"data-market-row":"price_jpy"}).find_all("td")
-    dollar_canada = soup.find("tr", attrs={"data-market-row":"price_cny"}).find_all("td")
+    dollar_canada = soup.find("tr", attrs={"data-market-row":"price_cad"}).find_all("td")
     price = {
         'dollar_usa':dollar_usa,
         'euro':euro,
