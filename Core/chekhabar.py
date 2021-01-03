@@ -10,13 +10,20 @@ from stock import *
 from data import date
 from decouple import config
 
+
 token = config("TOKEN")
 date = date()
 
 def main_menu_handler(update: Update, context: callbackcontext):
+    dollar_emoji = '\U0001F4B5'
+    coin_emoji = '\U0001F4B0'
+    stock_emoji = '\U0001F4B9'
+    crypto_emoji = '\U0001F4C8'
     buttons = [
-        ["قیمت طلا و سکه","نرخ ارز"],
-        ["ارزهای دیجیتال", "بورس"],
+        [f"{coin_emoji} قیمت طلا و سکه",
+        f"{dollar_emoji} نرخ ارز"],
+        [f"{crypto_emoji} ارزهای دیجیتال",
+        f"{stock_emoji}  بورس"],
         ["تبدیل ارز"]
     ]
     update.message.reply_text(text="منو اصلی",
@@ -41,7 +48,7 @@ def sekke_gold(update: Update, context: callbackcontext):
 
 def exchange(update: Update, context: callbackcontext):
     buttons = [
-        ["بازگشت"]
+        ["بازگشت \U0001F519"]
     ]
     text = '''
     برای تبدیل ارز از الگوهای زیر استفاده کنید : 
@@ -62,7 +69,7 @@ def arz(update: Update, context: callbackcontext):
         ["پوند انگلیس","یورو", "دلار آمریکا"],
         ["لیر ترکیه", "درهم امارات","فرانک سوئیس"],
         ["دلار کانادا", "ین ژاپن","یوان چین"],
-        ["بازگشت"]
+        ["بازگشت \U0001F519"]
     ]
     update.message.reply_text(text=f"نرخ ارز در تاریخ {date}",
     reply_markup= ReplyKeyboardMarkup(buttons, resize_keyboard=True))
@@ -71,7 +78,7 @@ def crypto(update: Update, context: callbackcontext):
     buttons = [
         ["تتر","اتریوم", "بیت‌کوین"],
         ["دش", "ریپل","لایت‌کوین"],
-        ["بازگشت"]
+        ["بازگشت \U0001F519"]
     ]
     update.message.reply_text(text=f"نرخ ارزهای دیجیتال در تاریخ {date}",
     reply_markup= ReplyKeyboardMarkup(buttons, resize_keyboard=True))
